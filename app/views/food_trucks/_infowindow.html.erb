@@ -1,0 +1,24 @@
+<div>
+  <b><%= truck.name %></b><br/>
+  <div class="star-ratings-css" align="left">
+    <div class="star-ratings-css-top" style="width: <%= truck.rating %>%"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+    <div class="star-ratings-css-bottom"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+  </div>
+  <br/><div style="width: 240px"><i><%= truck.food_items %></i></div><br/>
+  <b>Address: </b><i><%= truck.address %></i><br/>
+  <b>Hours: </b><i><%= truck.time_slots %></i><br/>
+  <a href="javascript:calcRoute(<%= truck.location.lat %>, <%= truck.location.lon %>)">Get Directions</a>
+</div>
+
+<style type="text/css">
+  a:link {
+    color: #0000FF;
+    background-color: transparent;
+    text-decoration: underline;
+  }
+  a:hover {
+    color: red;
+    background-color: transparent;
+    text-decoration: underline;
+  }
+</style>

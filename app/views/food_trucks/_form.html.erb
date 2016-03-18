@@ -1,0 +1,45 @@
+<%= form_for(@food_truck) do |f| %>
+  <% if @food_truck.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@food_truck.errors.count, "error") %> prohibited this food_truck from being saved:</h2>
+
+      <ul>
+      <% @food_truck.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :vehicle_type %><br>
+    <%= f.text_field :vehicle_type %>
+  </div>
+  <div class="field">
+    <%= f.label :food_items %><br>
+    <%= f.text_field :food_items %>
+  </div>
+  <div class="field">
+    <%= f.label :time_slots %><br>
+    <%= f.text_field :time_slots %>
+  </div>
+  <div class="field">
+    <%= f.label :address %><br>
+    <%= f.text_field :address %>
+  </div>
+  <div class="field">
+    <%= f.label :location %><br>
+    <%= f.text_field :location %>
+  </div>
+  <div class="field">
+    <%= f.label :object_id %><br>
+    <%= f.number_field :object_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

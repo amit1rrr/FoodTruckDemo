@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @food_truck.name %>
+</p>
+
+<p>
+  <strong>Vehicle type:</strong>
+  <%= @food_truck.vehicle_type %>
+</p>
+
+<p>
+  <strong>Food items:</strong>
+  <%= @food_truck.food_items %>
+</p>
+
+<p>
+  <strong>Time slots:</strong>
+  <%= @food_truck.time_slots %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @food_truck.address %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @food_truck.location %>
+</p>
+
+<p>
+  <strong>Object:</strong>
+  <%= @food_truck.object_id %>
+</p>
+
+<%= link_to 'Edit', edit_food_truck_path(@food_truck) %> |
+<%= link_to 'Back', food_trucks_path %>
