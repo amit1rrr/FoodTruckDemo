@@ -1,9 +1,9 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
+# rake db:seed
+# This destroys all the records in the FoodTrucks table and fills it up again 
+# by calling the SODA api. It essentially refreshes data in our backend.
 
-GEO_FACTORY = RGeo::Geographic.spherical_factory(srid: 4326)
 FoodTruck.destroy_all
+GEO_FACTORY = RGeo::Geographic.spherical_factory(srid: 4326)
 
 client = SODA::Client.new({:domain => "data.sfgov.org", :app_token => "8unlbsQtQiz7mUS8d9IQ3KqGA"})
 responses = client.get("rqzj-sfat", {:status => "APPROVED"})
