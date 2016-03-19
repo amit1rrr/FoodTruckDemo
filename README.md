@@ -16,7 +16,12 @@ Create a service that tells the user what types of food trucks might be found ne
 #### Backend
 I built a backend service which lets client query food trucks in their vicinity with different criterias. Clients can specify their own address and request food trucks only within certain distance from it. They can optionally specify food items they are interested in. They can also limit the number of results in which case we will return closest n trucks matching their criteria. 
 
-**All URL parameters and their default values are:**
+Some example URLs:
+-[https://frozen-beach-21640.herokuapp.com/food_trucks?range=2&limit=30](https://frozen-beach-21640.herokuapp.com/food_trucks?range=2&limit=30)
+-[https://frozen-beach-21640.herokuapp.com/food_trucks?limit=80&street=180%20spear%20st](https://frozen-beach-21640.herokuapp.com/food_trucks?limit=80&street=180%20spear%20st)
+-[https://frozen-beach-21640.herokuapp.com/food_trucks?street=900%20Branan%20street&keywords=burrito&range=2](https://frozen-beach-21640.herokuapp.com/food_trucks?street=900%20Branan%20street&keywords=burrito&range=2)
+
+**All URL parameters and their default values:**
 ```
 limit=10 : Return only 10 results (default 500)
 keywords="Hot dogs" : Return only trucks which sells hot dogs (no default value)
@@ -25,13 +30,9 @@ city="Seattle" : Client's city (San Fransicso by default)
 country="USA" : Client's country (USA by default)
 range=2 : Returns only trucks within 2 kilometers of client's address (default 10 Km)
 ```
-Some example URLs:
-[https://frozen-beach-21640.herokuapp.com/food_trucks?range=2&limit=30](https://frozen-beach-21640.herokuapp.com/food_trucks?range=2&limit=30)
-[https://frozen-beach-21640.herokuapp.com/food_trucks?limit=80&street=180%20spear%20st](https://frozen-beach-21640.herokuapp.com/food_trucks?limit=80&street=180%20spear%20st)
-[https://frozen-beach-21640.herokuapp.com/food_trucks?street=900%20Branan%20street&keywords=burrito&range=2](https://frozen-beach-21640.herokuapp.com/food_trucks?street=900%20Branan%20street&keywords=burrito&range=2)
 
 **To see the JSON reponse just append .json to food_trucks in any of the URLs above e.g.** 
-(http://localhost:3000/food_trucks.json?range=1&limit=2)[http://localhost:3000/food_trucks.json?range=1&limit=2]
+-[http://localhost:3000/food_trucks.json?range=1&limit=2](http://localhost:3000/food_trucks.json?range=1&limit=2)
 
 #### Front end
 I built a minimal front end to demonstrate the capabilities of backend. It uses Google maps to display the trucks and client's location. It shows all the relevent details of any truck and directions to it from the client's location. There are no text boxes/forms on front end, one has to use url parameters to make GET requests.
