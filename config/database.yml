@@ -16,6 +16,7 @@ default: &default
   pool: 5
   timeout: 60000
   schema_search_path: public,tiger
+  url: postgis://ft_master:masterPWD571@foodtruckdb.ckxpdmxwv5mm.us-east-1.rds.amazonaws.com:5432/foodtruckdb
 
 development:
   <<: *default
